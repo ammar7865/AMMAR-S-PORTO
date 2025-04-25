@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMMAR'S NEW PORTFOLIO</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+<!-- nav bar starting -->
+ <div class="navbar">
+    <div class="nav-border">
+    <div id="myname">
+        <h3>AMMAR QUADRI</h3>
+    </div>
+   <div class="nav-info">
+       <ul>
+      <li><a href="#about-sec"><div id="about-me">ABOUT ME</div></a></li>
+      <li><a href="#project-sec"><div id="projects">PROJECTS</div></a></li>
+      <li><a href="#service-sec"><div id="services">SERVICES</div></a></li>
+      <li><a href="#contact"><div id="contactme">CONTACT ME</div></a></li>
+        </ul>
+   </div>
+</div>''
+</div>
+<!--PORTFOLIO'S BODY-->
+<div class="body" id="about-sec">
+    <div class="aboutme-text">
+        <div class="profession">
+            <h1>FULL-STACK</h1>
+            <h1>WEB DEVELOPER</h1>
+        </div>
+        <div class="intro-heading">
+            I am Ammar- <div id="web-dev">WEB DEVLOPER</div>
+        </div> 
+      <div class="tag-line">
+           with a passion for creating beautiful and responsive websites.
+        </div>
+        <button class="gradient-button">VIEW MY WORK</button>
+ </div>
+ <div class="body-img">
+ </div>
+</div>
+  <section id="service-sec" class="services-section">
+    <h2 class="section-title-gradient">MY SERVICES</h2>
+    <div class="cards-wrapper">
+      <div class="service-card">
+        <div class="card-title">
+          <span class="icon">🖥️</span> Website Development
+        </div>
+        <p class="card-text">
+          I create websites based on your ready-made design. Whether it’s a landing page or a business card website, I will make it look great and work smoothly on any device.
+        </p>
+      </div>
+  
+      <div class="service-card lower-card">
+        <div class="card-title">
+          <span class="icon">🎨</span> Web Design
+        </div>
+        <p class="card-text">
+          I can design your website from scratch. I create modern, simple, and user-friendly designs that match your brand and goals.
+        </p>
+      </div>
+    </div>
+  </section>
+  <hr style="border: 2px solid white; width: 80%; margin: 0 auto;">
+
+<!--project section-->
+<section class="projects-parallax-section" id="project-sec">
+  <h2 class="section-title-gradient">PROJECT SHOWCASE</h2>
+  <div class="parallax-scroll-wrapper" id="scroll-wrapper">
+    <div class="parallax-track" id="track">
+      <div class="project-card"><img src="Screenshot 2025-04-24 130717.png" alt="">
+        <div class="project-caption">E-COMMERCE</div>
+      </div>
+      <div class="project-card"><img src="Screenshot 2025-04-24 124306.png" alt="">
+        <div class="project-caption">CAFE/RESTAURANT</div>
+      </div>
+      <div class="project-card"><img src="PROPERTY.JPG" alt="">
+        <div class="project-caption">PROPERTY</div>
+      </div>
+      <div class="project-card"><img src="PORTO.JPG" alt="">
+        <div class="project-caption">PORTFOLIO</div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr style="border: 2px solid white; width: 80%; margin: 0 auto;">
+
+<!--CONTACT SECTION-->
+<section class="contact-section" id="contact">
+  <div class="contact-container">
+    <div class="contact-left">
+      <h3><span class="highlight-text">DO YOU HAVE A PROJECT TO DISCUSS?</span><br>GET IN TOUCH 💬</h3>
+      <div class="contact-info">
+        <p><strong>CONTACT</strong><br><a href="ammarquadri14@gmail.com">ammarquadri14@gmail.com</a></p>
+        <p><strong>SOCIAL MEDIA</strong></p>
+        <div class="social-icons">
+          <i class="fab fa-linkedin"></i>
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-whatsapp"></i>
+          <i class="fab fa-telegram"></i>
+        </div>
+      </div>
+    </div>
+    <div class="contact-right">
+      <h4>CONTACT FORM</h4>
+      <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+        <input type="hidden"  name="access_key" value="a848ea1a-f09f-4528-bd60-52596992483d">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email"  name="email" placeholder="Email" required>
+        <textarea name="message" placeholder="Message" rows="5" required></textarea>
+        <button type="submit" class="send-button">SEND</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  const track = document.getElementById('track');
+  const cards = document.querySelectorAll('.project-card');
+
+  let activeIndex = 0;
+
+  function scrollToCard(index) {
+    const selectedCard = cards[index];
+    const wrapper = document.getElementById('scroll-wrapper');
+    const offsetLeft = selectedCard.offsetLeft;
+    const wrapperCenter = wrapper.offsetWidth / 2;
+    const cardCenter = selectedCard.offsetWidth / 2;
+
+    track.style.transform = `translateX(${wrapperCenter - offsetLeft - cardCenter}px)`;
+
+    cards.forEach(c => c.classList.remove('active'));
+    selectedCard.classList.add('active');
+    activeIndex = index;
+  }
+
+  cards.forEach((card, index) => {
+    card.addEventListener('click', () => scrollToCard(index));
+  });
+
+  // Scroll to first card initially
+  scrollToCard(0);
+</script>
+</body>
+</html>
